@@ -1,6 +1,6 @@
 import { createServerFileRoute } from '@tanstack/react-start/server'
 
-export const ServerRoute = createServerFileRoute().methods({
+export const ServerRoute = createServerFileRoute('/api/demo-names').methods({
   GET: () => {
     return new Response(JSON.stringify(['Alice', 'Bob', 'Charlie']), {
       headers: {
