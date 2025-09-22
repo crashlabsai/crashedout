@@ -1,5 +1,6 @@
 export type Mishap = {
   id: string
+  slug: string
   title: string
   description: string
   category: string
@@ -14,4 +15,10 @@ export type Mishap = {
     url: string
     thumbnail: string
   }[]
+  lessons: string[]
+  timeline: {
+    date: string
+    event: string
+  }[]
+  impact: string
 }

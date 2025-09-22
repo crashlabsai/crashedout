@@ -15,6 +15,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { useState } from 'react'
+import { useNavigate } from '@tanstack/react-router'
 import { Mishap } from '@/types'
 
 const getSeverityColor = (severity: string) => {
@@ -33,16 +34,17 @@ const getSeverityColor = (severity: string) => {
 export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
   const [selectedMishap, setSelectedMishap] = useState<Mishap | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <section className="px-6 py-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <h2 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
-            Hall of Failures
+            When AI Goes Wrong
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            {'Real AI mishaps that made headlines'}
+            {'Real mishaps, real lessons.'}
           </p>
         </div>
 
@@ -185,10 +187,9 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
                   <Button
                     className="w-full bg-black text-white hover:bg-gray-800 border-2 border-black font-bold"
                     onClick={() => {
-                      // This would navigate to a detailed page in a real app
-                      alert(
-                        'This would take you to a detailed page with more information!',
-                      )
+                      if (selectedMishap) {
+                        navigate({ to: `/mishaps/${selectedMishap.slug}` })
+                      }
                     }}
                   >
                     View Full Details
