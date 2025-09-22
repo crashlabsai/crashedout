@@ -162,11 +162,11 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
                         rel="noopener noreferrer"
                         className="flex gap-3 p-3 border-2 border-black bg-gray-50 hover:bg-gray-100 transition-colors group"
                       >
-                        <img
+                        {/* <img
                           src={source.thumbnail || '/placeholder.svg'}
                           alt=""
                           className="w-16 h-12 object-cover border border-gray-300"
-                        />
+                        /> */}
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:underline">
                             {source.title}

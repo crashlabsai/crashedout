@@ -172,11 +172,11 @@ function RouteComponent() {
                   rel="noopener noreferrer"
                   className="flex gap-4 p-4 border-2 border-black bg-gray-50 hover:bg-gray-100 transition-colors group hover:shadow-[4px_4px_0px_0px_black] hover:-translate-y-1"
                 >
-                  <img
+                  {/* <img
                     src={source.thumbnail || '/placeholder.svg'}
                     alt=""
                     className="w-20 h-16 object-cover border border-gray-300 flex-shrink-0"
-                  />
+                  /> */}
                   <div className="flex-1 min-w-0">
                     <p className="font-medium text-gray-900 line-clamp-3 group-hover:underline mb-2">
                       {source.title}

@@ -13,7 +13,6 @@ export type Mishap = {
   sources: {
     title: string
     url: string
-    thumbnail: string
   }[]
   lessons: string[]
   timeline: {

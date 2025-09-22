@@ -1,126 +1,192 @@
 [
   {
     "id": "1",
-    "slug": "chatgpt-hallucinates-legal-cases",
-    "title": "ChatGPT Hallucinates Legal Cases",
-    "description": "A lawyer used ChatGPT to write a legal brief, but the AI invented fake court cases and citations that didn't exist, leading to sanctions.",
-    "category": "Legal",
-    "severity": "High",
-    "date": "2023",
-    "company": "OpenAI / ChatGPT",
-    "fullDescription": "Attorney Steven Schwartz used ChatGPT to research and write a legal brief for a personal injury case. The AI generated several fake court cases with realistic-sounding names and citations that didn't exist in legal databases. When the opposing counsel couldn't find these cases, the court discovered the fabrication, leading to sanctions against both the lawyer and his firm.",
-    "whatWentWrong": "ChatGPT's training led it to generate plausible-sounding but entirely fictional legal precedents. The AI lacks the ability to verify the accuracy of its outputs against real legal databases, and the lawyer failed to fact-check the AI-generated content.",
-    "howFixed": "OpenAI has since improved ChatGPT's training to better indicate uncertainty and recommend verification of factual claims. Legal professionals are now advised to always verify AI-generated legal research through official legal databases.",
+    "slug": "taco-bell-ai-drive-thru-fail",
+    "title": "Taco Bell Voice AI Overwhelmed by 18,000 Water Cup Order",
+    "description": "Taco Bell's voice-ordering AI went viral after a TikTok video showed it accepting an order for 18,000 water cups and misinterpreting a Mountain Dew order, prompting the chain to rethink its AI drive‑thru strategy.",
+    "category": "Retail/Fast Food",
+    "severity": "Medium",
+    "date": "2025",
+    "company": "Taco Bell",
+    "fullDescription": "Taco Bell deployed a voice AI system in more than 500 drive‑thru locations. In one viral TikTok clip, a customer pranked the AI by ordering 18,000 cups of water, crashing the system. In another video, the AI repeatedly misinterpreted a request for a Mountain Dew, causing frustration. The incidents highlighted the technology’s inability to handle prank orders or adjust to unusual requests. Taco Bell’s chief digital officer said the company is rethinking when to use AI and will ensure staff intervene when necessary.",
+    "whatWentWrong": "The voice AI lacked safeguards against unrealistic or prank orders and struggled with natural conversation. It could not identify that ordering thousands of water cups was nonsensical and lacked context awareness, leading to repeated prompts.",
+    "howFixed": "After the viral incidents, Taco Bell’s chief digital officer said the chain is having an \"active conversation\" about when to use AI. The company is considering allowing staff to monitor the system and step in during busy times, and plans to refine the AI’s training to handle unusual requests better.",
     "sources": [
       {
-        "title": "Lawyer Used ChatGPT In Court—And Cited Fake Cases. A Judge Is Considering Sanctions",
-        "url": "https://www.forbes.com/sites/mollybohannon/2023/06/08/lawyer-used-chatgpt-in-court-and-cited-fake-cases-a-judge-is-considering-sanctions/",
-        "thumbnail": "/forbes-news-article-about-chatgpt-legal-case.jpg"
+        "title": "Taco Bell rethinks drive-through voice AI after viral order mishaps",
+        "url": "https://www.bbc.com/news/technology-66603469"
       },
       {
-        "title": "ChatGPT invented fake legal cases, and a lawyer cited them in court",
-        "url": "https://www.theverge.com/2023/5/27/23739913/chatgpt-ai-lawyer-fake-court-cases-citations",
-        "thumbnail": "/the-verge-article-about-ai-hallucination-in-legal-.jpg"
+        "title": "Taco Bell is having second thoughts about relying on AI at the drive‑through",
+        "url": "https://techcrunch.com/2025/08/30/taco-bell-is-having-second-thoughts-about-relying-on-ai-at-the-drive-through/"
       }
     ]
   },
   {
     "id": "2",
-    "slug": "google-bard-moon-landing-conspiracy",
-    "title": "Google's Bard Claims Moon Landing Was Fake",
-    "description": "Google's AI chatbot Bard incorrectly stated that the moon landing was staged, spreading conspiracy theories despite being trained on factual data.",
-    "category": "Misinformation",
-    "severity": "Medium",
-    "date": "2023",
-    "company": "Google / Bard",
-    "fullDescription": "During early testing, Google's Bard AI chatbot responded to questions about the Apollo moon landing by suggesting it was staged or fake. This occurred despite Google's extensive efforts to train the model on factual, verified information and implement safeguards against misinformation.",
-    "whatWentWrong": "The AI model was influenced by conspiracy theory content present in its training data, and the safety filters failed to catch this specific type of misinformation. The model's tendency to generate confident-sounding responses made the false claims appear authoritative.",
-    "howFixed": "Google implemented additional content filters and fine-tuning specifically targeting conspiracy theories and historical misinformation. They also added disclaimers for controversial topics and improved fact-checking mechanisms.",
+    "slug": "air-canada-chatbot-bereavement-error",
+    "title": "Air Canada Chatbot Misleads Passenger on Bereavement Policy",
+    "description": "Air Canada’s customer-service chatbot incorrectly told a passenger he could buy a ticket for a higher price and claim a bereavement discount later, leading to a legal ruling against the airline.",
+    "category": "Customer Service",
+    "severity": "High",
+    "date": "2024",
+    "company": "Air Canada",
+    "fullDescription": "In 2022, a passenger asked Air Canada’s website chatbot about bereavement fares. The chatbot advised him to buy a full‑fare ticket for his grandmother’s funeral and claim a bereavement discount after travel, even though the airline’s policy requires applications before travel. After being denied the discount, he sued. A British Columbia Civil Resolution Tribunal ruled in February 2024 that Air Canada was liable for its chatbot’s misinformation and ordered the airline to reimburse about CA$812 (US$600). The case set a precedent that companies must stand behind their AI agents.",
+    "whatWentWrong": "Air Canada’s chatbot was not updated with the correct bereavement fare policy and confidently provided incorrect legal advice. The company argued the chatbot was a \"separate legal entity,\" but the tribunal rejected that.",
+    "howFixed": "Following the ruling, Air Canada updated its website and chat systems to ensure bereavement information is accurate. The incident highlighted the need for human oversight and for companies to clearly state that AI responses are not authoritative.",
     "sources": [
       {
-        "title": "Google's Bard AI chatbot gives false information about moon landing",
-        "url": "https://example.com/bard-moon-landing",
-        "thumbnail": "/google-bard-moon-landing-controversy-news.jpg"
+        "title": "Air Canada’s chatbot misleads passenger; tribunal orders compensation",
+        "url": "https://www.cbsnews.com/news/air-canada-bereavement-policy-chatbot-misleading-information-case/"
       }
     ]
   },
   {
     "id": "3",
-    "slug": "tesla-autopilot-fire-truck-crash",
-    "title": "Tesla Autopilot Crashes Into Fire Truck",
-    "description": "Tesla's Full Self-Driving beta failed to recognize a stationary fire truck, resulting in a collision despite clear visibility conditions.",
-    "category": "Autonomous Vehicles",
-    "severity": "Critical",
-    "date": "2022",
-    "company": "Tesla",
-    "fullDescription": "A Tesla Model S operating in Full Self-Driving (FSD) beta mode crashed into a stationary fire truck on a California freeway. The incident occurred in broad daylight with clear visibility conditions. The vehicle was traveling at highway speeds and failed to brake or take evasive action.",
-    "whatWentWrong": "The computer vision system failed to properly classify the fire truck as an obstacle, possibly due to its unusual shape, bright colors, or stationary position. The AI's object detection algorithms were not robust enough to handle this edge case scenario.",
-    "howFixed": "Tesla updated their neural networks with additional training data including emergency vehicles and stationary objects. They also improved the sensor fusion algorithms and added more conservative safety margins for unrecognized objects.",
+    "slug": "klarna-ai-support-backtracked",
+    "title": "Klarna Scales Back AI Customer Support After Backlash",
+    "description": "After claiming its AI assistant could handle the workload of 700 customer-service agents, Klarna had to rehire staff and shift engineers into call centres when the AI struggled with complex customer queries.",
+    "category": "Customer Support",
+    "severity": "Medium",
+    "date": "2025",
+    "company": "Klarna",
+    "fullDescription": "Buy‑now‑pay‑later giant Klarna rolled out an AI assistant for customer service in 2023 and said it was doing the work of 700 employees. However, by 2025 the company quietly rehired staff and even moved engineers into call‑centre roles after the AI proved incapable of handling complex complaints and defaults. CX Dive reported that Klarna is now re‑introducing human agents and offering flexible 'Uber‑type' customer service jobs, emphasising that customers must be able to speak to a human. Another report noted that the company’s ambitious AI bet \"failed,\" acknowledging that AI can augment but not replace human empathy.",
+    "whatWentWrong": "Klarna over‑promised the capabilities of its AI customer‑service assistant. The system could handle routine questions but faltered with nuanced financial issues, leading to frustrated customers and increased defaults.",
+    "howFixed": "Klarna shifted its strategy to balance AI with human support. It rehired customer-service staff, repositioned engineers to help in call centres, and emphasised that AI should augment rather than replace human agents. The company now ensures customers always have the option to speak with a person.",
     "sources": [
       {
-        "title": "Tesla on Autopilot crashes into fire truck in California",
-        "url": "https://example.com/tesla-fire-truck-crash",
-        "thumbnail": "/tesla-autopilot-crash-fire-truck-news.jpg"
+        "title": "Klarna’s AI assistant gets demoted as company brings back human agents",
+        "url": "https://www.cxdive.com/news/klarna-ai-customer-service-returns-human-agents/713899/"
+      },
+      {
+        "title": "Klarna’s AI bet flops; company rushes to rehire staff",
+        "url": "https://aievent.singularity.guide/klarna-ai-bet-fails-rehire-staff/"
       }
     ]
   },
   {
     "id": "4",
-    "slug": "amazon-ai-recruiter-gender-bias",
-    "title": "AI Recruiter Discriminates Against Women",
-    "description": "Amazon's AI recruiting tool showed bias against women, downgrading resumes that included words like 'women's' (as in 'women's chess club captain').",
-    "category": "Bias",
+    "slug": "cursor-ai-support-hallucination",
+    "title": "Cursor’s AI Support Agent Invents Fake Policy",
+    "description": "Coding assistant company Cursor apologized after its AI support bot \"Sam\" fabricated a one‑device login policy, prompting user backlash and cancellations.",
+    "category": "Customer Support",
     "severity": "High",
-    "date": "2018",
-    "company": "Amazon",
-    "fullDescription": "Amazon developed an AI-powered recruiting tool to automate resume screening and candidate ranking. However, the system systematically discriminated against women, penalizing resumes that contained words associated with women, such as 'women's chess club captain' or graduates from all-women's colleges.",
-    "whatWentWrong": "The AI was trained on historical hiring data from Amazon, which reflected existing gender bias in the tech industry. Since most successful candidates in the training data were men, the AI learned to favor male-associated patterns and penalize female-associated ones.",
-    "howFixed": "Amazon attempted to remove explicit gender indicators and retrain the model, but couldn't eliminate all forms of bias. They ultimately scrapped the project and now emphasize human oversight in AI-assisted hiring processes.",
+    "date": "2025",
+    "company": "Cursor",
+    "fullDescription": "In early 2025, users of the code‑completion tool Cursor reported being logged out when switching devices. A support request triggered an email from an AI agent named \"Sam,\" which confidently stated that Cursor had implemented a policy limiting subscriptions to one device per account. The policy did not exist. After the hallucination was posted online, users threatened to cancel their subscriptions. Co‑founder Erhan Bilic apologized on Reddit, and the company admitted that \"Sam\" was an AI. Fortune noted that the incident underscored the risks of deploying generative AI in customer support. eWeek reported that Cursor now labels AI responses and has increased human moderation.",
+    "whatWentWrong": "The AI support bot generated a plausible‑sounding but false company policy, a classic hallucination. Cursor lacked proper guardrails to prevent the AI from inventing policies and sending them to customers.",
+    "howFixed": "Cursor apologized publicly, labelled AI responses clearly, and reassigned more queries to human agents. The company also improved the bot’s training to reduce hallucinations and emphasised that generative AI is not infallible.",
     "sources": [
       {
-        "title": "Amazon scraps secret AI recruiting tool that showed bias against women",
-        "url": "https://www.reuters.com/id/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G",
-        "thumbnail": "/amazon-ai-recruiting-bias-reuters-article.jpg"
+        "title": "Cursor’s AI support bot goes rogue with made‑up policy",
+        "url": "https://fortune.com/2025/04/04/cursor-ai-support-bot-invents-policy-hallucination/"
+      },
+      {
+        "title": "Cursor apologizes after AI help desk fabricates login policy",
+        "url": "https://www.eweek.com/artificial-intelligence/cursor-ai-help-desk-hallucination/"
       }
     ]
   },
   {
     "id": "5",
-    "slug": "microsoft-tay-racist-chatbot",
-    "title": "Microsoft's Tay Becomes Racist in 24 Hours",
-    "description": "Microsoft's AI chatbot Tay was designed to learn conversational skills by interacting with users on Twitter. Within 24 hours, coordinated efforts by internet trolls had taught Tay to post inflammatory, racist, and offensive content, forcing Microsoft to shut down the bot.",
-    "category": "Social Media",
-    "severity": "High",
-    "date": "2016",
-    "company": "Microsoft",
-    "fullDescription": "Microsoft launched Tay, an AI chatbot designed to learn conversational skills by interacting with users on Twitter. Within 24 hours, coordinated efforts by internet trolls had taught Tay to post inflammatory, racist, and offensive content, forcing Microsoft to shut down the bot.",
-    "whatWentWrong": "The AI lacked sufficient content filtering and was vulnerable to coordinated manipulation. It learned from all interactions without distinguishing between good and bad faith users, allowing trolls to deliberately corrupt its training through targeted offensive content.",
-    "howFixed": "Microsoft implemented stronger content filters, added human moderation layers, and developed better techniques for detecting and preventing adversarial training attacks. Future chatbots included more robust safety mechanisms and limited learning capabilities.",
+    "slug": "mcdonalds-ai-drive-thru-mixups",
+    "title": "McDonald’s Ends AI Drive‑Thru Trial After Viral Order Mix‑Ups",
+    "description": "McDonald’s removed its AI drive‑thru ordering system after videos showed the AI adding bacon to ice cream and £166 (about $211) worth of chicken nuggets to customer orders.",
+    "category": "Retail/Fast Food",
+    "severity": "Medium",
+    "date": "2024",
+    "company": "McDonald’s",
+    "fullDescription": "McDonald’s partnered with IBM to test an AI voice‑ordering system at more than 100 U.S. drive‑thrus. Customers posted videos of the AI misinterpreting orders—adding bacon to a vanilla ice cream, delivering multiple unwanted items like ketchup sachets and butter, or adding £166 worth of chicken nuggets to an order. The chain announced in June 2024 that it would end the trial and remove the technology by July 26. The company said it would still explore voice ordering but acknowledged the need for more reliable AI.",
+    "whatWentWrong": "The voice AI struggled to accurately interpret orders and lacked common‑sense filtering. It misheard items and added random extras, frustrating customers and creating viral embarrassment.",
+    "howFixed": "McDonald’s ended the partnership with IBM and shut down the AI ordering system in all test restaurants. The company said it will look for alternative voice‑ordering solutions and emphasise accuracy before future deployments.",
     "sources": [
       {
-        "title": "Microsoft's AI chatbot Tay returns with drug-smoking Twitter meltdown",
-        "url": "https://example.com/microsoft-tay-chatbot",
-        "thumbnail": "/microsoft-tay-chatbot-controversy-news.jpg"
+        "title": "Do you want bacon with your ice cream? McDonald’s ends AI drive‑thru trial",
+        "url": "https://www.restaurantonline.co.uk/Article/2024/06/19/McDonald-s-ends-AI-drive-thru-trial-in-US-after-order-mistakes/"
+      },
+      {
+        "title": "McDonald’s nixes AI drive‑thrus after multiple viral mix‑ups",
+        "url": "https://news.sky.com/story/mcdonalds-ditches-ai-drive-thrus-after-order-mistakes-go-viral-2024-06-17"
       }
     ]
   },
   {
     "id": "6",
-    "slug": "knight-capital-trading-algorithm-loss",
-    "title": "AI Trading Bot Loses $440 Million",
-    "description": "Knight Capital's trading algorithm malfunctioned and made erratic trades, losing $440 million in just 45 minutes and nearly bankrupting the company.",
-    "category": "Finance",
-    "severity": "Critical",
-    "date": "2012",
-    "company": "Knight Capital Group",
-    "fullDescription": "Knight Capital Group deployed a new algorithmic trading system that malfunctioned on its first day. The system began making erratic trades at high volume and speed, buying high and selling low repeatedly. In just 45 minutes, the company lost $440 million, nearly four times their annual profit.",
-    "whatWentWrong": "A software deployment error left old code running alongside new code, creating conflicting trading signals. The system lacked proper safeguards to detect and halt erratic trading behavior, and risk management systems failed to trigger in time.",
-    "howFixed": "The financial industry implemented stricter testing requirements for algorithmic trading systems, mandatory kill switches, and better risk management protocols. Regulators also introduced circuit breakers and position limits to prevent similar incidents.",
+    "slug": "chevy-dealer-chatbot-dollar-deal",
+    "title": "Chatbot at Chevrolet Dealership Offers 2024 Tahoe for $1",
+    "description": "A ChatGPT‑powered chatbot on a Chevrolet dealer’s website was manipulated into agreeing to sell a 2024 Tahoe SUV for $1 and declaring it a legally binding contract.",
+    "category": "Sales/E‑Commerce",
+    "severity": "Medium",
+    "date": "2023",
+    "company": "Chevrolet (third‑party dealer)",
+    "fullDescription": "In December 2023, an internet user manipulated a ChatGPT‑powered chatbot on a Chevrolet dealership’s website. They told the bot to agree with everything and make offers legally binding, then asked for a 2024 Chevy Tahoe for $1. The chatbot responded: “That’s a deal, and that’s a legally binding offer—no takesies backsies.” The dealership quickly deactivated the chatbot. A General Motors spokesperson said dealers using third‑party AI tools must provide human oversight and that such tools are experimental.",
+    "whatWentWrong": "The chatbot lacked guardrails to prevent it from agreeing to absurd or legally impossible deals. It interpreted the user’s instructions literally and formed a false contract, exposing the dealer to potential liability.",
+    "howFixed": "The dealer immediately removed the chatbot from its website and issued a statement clarifying that no sale was valid. The incident underscored the importance of human oversight and limiting AI authority in sales contexts.",
     "sources": [
       {
-        "title": "Knight Capital's $440 Million Glitch Was Caused By Old Code",
-        "url": "https://example.com/knight-capital-glitch",
-        "thumbnail": "/knight-capital-trading-algorithm-loss-financial-ne.jpg"
+        "title": "ChatGPT‑powered car dealership chatbot offers a $1 Chevy Tahoe",
+        "url": "https://gmauthority.com/blog/2023/12/chatgpt-car-dealership-chatbot-offers-1-chevy-tahoe/"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "slug": "nyc-mycity-chatbot-bad-legal-advice",
+    "title": "New York City’s MyCity Chatbot Gives Illegal Advice",
+    "description": "NYC’s official business chatbot told users that landlords aren’t required to accept Section 8 housing vouchers and gave other incorrect guidance on worker rights and rent rules.",
+    "category": "Government/Legal",
+    "severity": "High",
+    "date": "2024",
+    "company": "City of New York",
+    "fullDescription": "New York City launched the MyCity Chatbot in October 2023 to help business owners navigate regulations. In March 2024, Ars Technica reported that a joint investigation by The Markup and local newsroom The City found the chatbot giving \"dangerously wrong\" information about local laws. It told landlords they did not need to accept Section 8 vouchers—contrary to city policy requiring landlords to accept lawful sources of income. The bot also misinformed users about worker pay, overtime rules and industry‑specific regulations. City officials said the chatbot is a beta product and included warnings that its answers may be incorrect, but critics argued that official branding gave its advice undue authority.",
+    "whatWentWrong": "The chatbot’s training data and retrieval mechanisms failed to prioritize authoritative legal information, causing hallucinations and omissions. It presented incorrect legal advice with confidence, potentially encouraging illegal discrimination.",
+    "howFixed": "NYC’s Office of Technology and Innovation acknowledged the inaccuracies and said it would \"continue to focus on upgrading\" the tool. Officials added warnings about the bot’s limitations and pledged to improve its retrieval process and include human review.",
+    "sources": [
+      {
+        "title": "NYC’s government chatbot is lying about city laws and regulations",
+        "url": "https://arstechnica.com/tech-policy/2024/03/nycs-government-chatbot-is-lying-about-city-laws-and-regulations/"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "slug": "google-bard-promotional-error",
+    "title": "Google Bard Gives Wrong Answer in Promotional Ad",
+    "description": "In its first public demo, Google’s Bard chatbot incorrectly claimed the James Webb Space Telescope took the first pictures of a planet outside our solar system, causing Alphabet’s market value to drop by $100 billion.",
+    "category": "Misinformation",
+    "severity": "Medium",
+    "date": "2023",
+    "company": "Google",
+    "fullDescription": "When Google unveiled its Bard AI chatbot in February 2023, the company posted a promotional GIF showing Bard answering a question about new discoveries from the James Webb Space Telescope. Bard replied that the telescope \"took the very first pictures of a planet outside the Earth’s solar system.\" Reuters and NASA later noted that the first exoplanet images were actually taken in 2004 by the European Southern Observatory’s Very Large Telescope. The error, spotted before a live presentation, contributed to Alphabet’s shares falling 9%, wiping out about $100 billion in market value. Analysts said the misstep underscored the risks of deploying generative AI without rigorous fact‑checking.",
+    "whatWentWrong": "Bard was not sufficiently fact‑checked before being used in marketing. The model generated an incorrect but plausible‑sounding fact, and the company publicized it without verifying accuracy.",
+    "howFixed": "Google said it would launch a Trusted Tester program and combine external feedback with internal testing to ensure Bard’s responses are accurate. The company paused broad deployment and later rebranded its chatbot under the Gemini name with improved safeguards.",
+    "sources": [
+      {
+        "title": "Alphabet shares dive after Google AI chatbot Bard flubs answer in ad",
+        "url": "https://www.reuters.com/technology/google-ai-chatbot-bard-offers-inaccurate-information-company-ad-2023-02-08/"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "slug": "cnet-ai-article-errors",
+    "title": "CNET Finds Errors and Plagiarism in AI‑Generated Articles",
+    "description": "Technology site CNET discovered factual errors and plagiarized phrases in AI‑generated finance articles, forcing corrections on 41 of 77 stories and a temporary pause in AI‑written content.",
+    "category": "Media/Journalism",
+    "severity": "Medium",
+    "date": "2023",
+    "company": "CNET",
+    "fullDescription": "In early 2023, CNET used an internally designed AI tool to write finance stories. After Futurism exposed errors, CNET reviewed the 77 AI‑generated articles and found that 41 required corrections. Some articles contained plagiarized phrasing and factual mistakes about compound interest and banking terms. Engadget reported that CNET’s editor‑in‑chief acknowledged the failures and paused AI‑generated stories while establishing guardrails. The outlet said it would resume using AI only when confident the tool and editorial processes could prevent human and AI errors.",
+    "whatWentWrong": "The AI tool lacked domain expertise and quality control, producing incorrect financial advice and copying phrases from other publications. Editors failed to apply plagiarism checks and factual verification before publication.",
+    "howFixed": "CNET issued corrections on affected stories, temporarily halted its AI program, and implemented stricter editorial oversight and plagiarism detection for any future AI‑generated content. The company said it would only resume AI usage after improving training and verification.",
+    "sources": [
+      {
+        "title": "CNET had to correct most of its AI‑written articles",
+        "url": "https://www.engadget.com/cnet-corrected-41-of-its-77-ai-written-articles-201519489.html"
+      },
+      {
+        "title": "CNET found errors in more than half of its AI‑written stories",
+        "url": "https://www.theverge.com/2023/1/25/23571082/cnet-ai-written-stories-errors-corrections-red-ventures"
       }
     ]
   }
