@@ -23,18 +23,14 @@ export default function Hero() {
 
       <div className="absolute left-[45%] md:left-[47%] top-[40%]  xl:top-[38%] transform -translate-x-1/2 -translate-y-1/2 text-center space-y-4 ">
         <h1 className="font-heading text-3xl xl:text-5xl text-white font-bold tracking-tight glitch-text">
-          Agent Mishaps
+          AI Mishaps
         </h1>
 
         <p className="text-white text-sm sm:text-base xl:text-xl leading-relaxed text-wrap">
           Mishaps happen. Learn from them.
         </p>
 
-        <Button
-          size="lg"
-          onClick={scrollToGrid}
-          className="bg-[#C0C0C0] text-black font-sans text-sm px-8 py-3 border-2 border-[#808080] border-t-[#E0E0E0] border-l-[#E0E0E0] border-b-[#808080] border-r-[#808080] hover:bg-[#B0B0B0] transition-all duration-200 shadow-[inset_1px_1px_0px_0px_#E0E0E0,inset_-1px_-1px_0px_0px_#808080] rounded-sm"
-        >
+        <Button size="lg" onClick={scrollToGrid}>
           Explore
         </Button>
         <p className="text-white/80 text-sm md:text-base xl`:text-lg leading-relaxed">

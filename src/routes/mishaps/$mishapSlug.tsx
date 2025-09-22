@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, notFound } from '@tanstack/react-router'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
@@ -10,6 +10,15 @@ export const Route = createFileRoute('/mishaps/$mishapSlug')({
   loader: async ({ params }) => {
     const { mishapSlug } = params
     const response = await fetch(`/api/mishaps/${mishapSlug}`)
+
+    if (!response.ok && response.status === 404) {
+      throw notFound()
+    }
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch mishap: ${response.statusText}`)
+    }
+
     const data = await response.json()
     return data
   },
@@ -48,10 +57,7 @@ function RouteComponent() {
         <div className="absolute inset-0 bg-black/8"></div>
         <div className="mx-auto max-w-4xl relative z-10">
           <Link to="/">
-            <Button
-              variant="outline"
-              className="mb-4 border-2 border-black bg-white hover:bg-gray-100 shadow-[2px_2px_0px_0px_black]"
-            >
+            <Button className="mb-4">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back
             </Button>

@@ -185,7 +185,8 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
 
                 <div className="pt-4 border-t-2 border-gray-200">
                   <Button
-                    className="w-full bg-black text-white hover:bg-gray-800 border-2 border-black font-bold"
+                    variant="inverse"
+                    className="w-full"
                     onClick={() => {
                       if (selectedMishap) {
                         navigate({ to: `/mishaps/${selectedMishap.slug}` })

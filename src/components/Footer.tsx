@@ -16,19 +16,20 @@ export default function Footer() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
-              className="bg-black text-white hover:bg-gray-800 border-4 border-black shadow-[4px_4px_0px_0px_theme(colors.gray.400)] font-bold"
+              variant="inverse"
               onClick={() =>
-                window.open('https://github.com/crashlabs/ai-mishaps', '_blank')
+                window.open(
+                  'https://github.com/crashlabsai/ai-mishaps',
+                  '_blank',
+                )
               }
             >
               🚀 Contribute on GitHub
             </Button>
             <Button
-              variant="outline"
-              className="border-4 border-black bg-white text-black hover:bg-gray-100 shadow-[4px_4px_0px_0px_theme(colors.gray.400)] font-bold"
               onClick={() =>
                 window.open(
-                  'https://github.com/crashlabs/ai-mishaps/issues/new',
+                  'https://github.com/crashlabsai/ai-mishaps/issues/new',
                   '_blank',
                 )
               }
@@ -43,7 +44,14 @@ export default function Footer() {
           {/* CrashLabs Branding */}
           <div className="mt-8 text-sm text-muted-foreground font-mono">
             A project by{' '}
-            <span className="font-bold text-foreground">CrashLabs</span>
+            <a
+              className="font-bold text-foreground"
+              href="https://crashlabs.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CrashLabs
+            </a>
           </div>
         </div>
       </div>
