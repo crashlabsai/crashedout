@@ -37,7 +37,7 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
   const navigate = useNavigate()
 
   return (
-    <section className="px-6 py-16">
+    <section className="px-6 py-16" data-section="mishaps-grid">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <h2 className="font-heading text-4xl font-bold text-foreground md:text-5xl">

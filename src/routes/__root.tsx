@@ -5,6 +5,7 @@ import { TanstackDevtools } from '@tanstack/react-devtools'
 import Header from '../components/Header'
 
 import appCss from '../styles.css?url'
+import NotFound from '@/components/NotFound'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -17,7 +18,8 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title:
+          'AI Mishaps - Discover when and how AI Agents and implementations have gone wrong',
       },
     ],
     links: [
@@ -29,6 +31,7 @@ export const Route = createRootRoute({
   }),
 
   shellComponent: RootDocument,
+  notFoundComponent: NotFound,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
