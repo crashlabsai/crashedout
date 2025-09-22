@@ -12,7 +12,8 @@ import { createServerRootRoute } from '@tanstack/react-start/server'
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { ServerRoute as ApiDemoNamesServerRouteImport } from './routes/api.demo-names'
+import { Route as MishapsMishapSlugRouteImport } from './routes/mishaps/$mishapSlug'
+import { ServerRoute as ApiMishapsServerRouteImport } from './routes/api.mishaps'
 
 const rootServerRouteImport = createServerRootRoute()
 
@@ -21,53 +22,62 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiDemoNamesServerRoute = ApiDemoNamesServerRouteImport.update({
-  id: '/api/demo-names',
-  path: '/api/demo-names',
+const MishapsMishapSlugRoute = MishapsMishapSlugRouteImport.update({
+  id: '/mishaps/$mishapSlug',
+  path: '/mishaps/$mishapSlug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMishapsServerRoute = ApiMishapsServerRouteImport.update({
+  id: '/api/mishaps',
+  path: '/api/mishaps',
   getParentRoute: () => rootServerRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/mishaps/$mishapSlug': typeof MishapsMishapSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/mishaps/$mishapSlug': typeof MishapsMishapSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/mishaps/$mishapSlug': typeof MishapsMishapSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/mishaps/$mishapSlug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/mishaps/$mishapSlug'
+  id: '__root__' | '/' | '/mishaps/$mishapSlug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MishapsMishapSlugRoute: typeof MishapsMishapSlugRoute
 }
 export interface FileServerRoutesByFullPath {
-  '/api/demo-names': typeof ApiDemoNamesServerRoute
+  '/api/mishaps': typeof ApiMishapsServerRoute
 }
 export interface FileServerRoutesByTo {
-  '/api/demo-names': typeof ApiDemoNamesServerRoute
+  '/api/mishaps': typeof ApiMishapsServerRoute
 }
 export interface FileServerRoutesById {
   __root__: typeof rootServerRouteImport
-  '/api/demo-names': typeof ApiDemoNamesServerRoute
+  '/api/mishaps': typeof ApiMishapsServerRoute
 }
 export interface FileServerRouteTypes {
   fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths: '/api/demo-names'
+  fullPaths: '/api/mishaps'
   fileServerRoutesByTo: FileServerRoutesByTo
-  to: '/api/demo-names'
-  id: '__root__' | '/api/demo-names'
+  to: '/api/mishaps'
+  id: '__root__' | '/api/mishaps'
   fileServerRoutesById: FileServerRoutesById
 }
 export interface RootServerRouteChildren {
-  ApiDemoNamesServerRoute: typeof ApiDemoNamesServerRoute
+  ApiMishapsServerRoute: typeof ApiMishapsServerRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -79,15 +89,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mishaps/$mishapSlug': {
+      id: '/mishaps/$mishapSlug'
+      path: '/mishaps/$mishapSlug'
+      fullPath: '/mishaps/$mishapSlug'
+      preLoaderRoute: typeof MishapsMishapSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 declare module '@tanstack/react-start/server' {
   interface ServerFileRoutesByPath {
-    '/api/demo-names': {
-      id: '/api/demo-names'
-      path: '/api/demo-names'
-      fullPath: '/api/demo-names'
-      preLoaderRoute: typeof ApiDemoNamesServerRouteImport
+    '/api/mishaps': {
+      id: '/api/mishaps'
+      path: '/api/mishaps'
+      fullPath: '/api/mishaps'
+      preLoaderRoute: typeof ApiMishapsServerRouteImport
       parentRoute: typeof rootServerRouteImport
     }
   }
@@ -95,12 +112,13 @@ declare module '@tanstack/react-start/server' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MishapsMishapSlugRoute: MishapsMishapSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 const rootServerRouteChildren: RootServerRouteChildren = {
-  ApiDemoNamesServerRoute: ApiDemoNamesServerRoute,
+  ApiMishapsServerRoute: ApiMishapsServerRoute,
 }
 export const serverRouteTree = rootServerRouteImport
   ._addFileChildren(rootServerRouteChildren)

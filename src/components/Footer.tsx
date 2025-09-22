@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* CrashLabs Branding */}
           <div className="mt-8 text-sm text-muted-foreground font-mono">
-            building with ❤️ by{' '}
+            A project by{' '}
             <span className="font-bold text-foreground">CrashLabs</span>
           </div>
         </div>
