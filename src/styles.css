@@ -4,6 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Font variables */
+  --font-dm-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-space-grotesk: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
   /* Updated to professional black and white color scheme */
   --background: oklch(1 0 0); /* Pure white */
   --foreground: oklch(0.1 0 0); /* Pure black */
@@ -78,7 +82,8 @@
 
 @theme inline {
   --font-sans: var(--font-dm-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono:
+    ui-monospace, 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
   --font-heading: var(--font-space-grotesk);
   --color-background: var(--background);
   --color-foreground: var(--foreground);

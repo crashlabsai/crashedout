@@ -128,34 +128,27 @@ export default function Hero() {
             {aiMishaps.map((mishap) => (
               <Card
                 key={mishap.id}
-                className="group relative overflow-hidden border-4 border-border bg-card transition-all duration-300 ease-out hover:shadow-[8px_8px_0px_0px_theme(colors.foreground)] hover:border-primary hover:-translate-y-1 hover:translate-x-1"
+                className="group relative border-4 border-black bg-white transition-all duration-200 hover:shadow-[6px_6px_0px_0px_black] hover:-translate-y-1 hover:translate-x-1"
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex-shrink-0 rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary/20">
-                      {mishap.icon}
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <Badge className={getSeverityColor(mishap.severity)}>
-                        {mishap.severity}
-                      </Badge>
-                      <Badge variant="outline" className="text-xs">
-                        {mishap.date}
-                      </Badge>
-                    </div>
+                    <div className="text-black">{mishap.icon}</div>
+                    <Badge className={getSeverityColor(mishap.severity)}>
+                      {mishap.severity}
+                    </Badge>
                   </div>
 
-                  <CardTitle className="font-heading text-xl font-bold leading-tight text-balance">
+                  <CardTitle className="font-heading text-xl font-bold leading-tight text-balance mt-4">
                     {mishap.title}
                   </CardTitle>
 
-                  <Badge variant="secondary" className="w-fit">
-                    {mishap.category}
-                  </Badge>
+                  <div className="text-xs text-gray-600 font-mono">
+                    {mishap.category} • {mishap.date}
+                  </div>
                 </CardHeader>
 
                 <CardContent>
-                  <CardDescription className="text-pretty leading-relaxed">
+                  <CardDescription className="text-pretty leading-relaxed text-black">
                     {mishap.description}
                   </CardDescription>
                 </CardContent>
