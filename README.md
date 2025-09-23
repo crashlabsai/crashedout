@@ -1,6 +1,10 @@
 # Crashed Out
 
+*A project by [CrashLabs](https://crashlabs.ai)*
+
 A curated collection of real-world AI failures, mishaps, and cautionary tales. This project documents when AI systems go wrong, from chatbots giving bad legal advice to voice assistants accepting impossible orders.
+
+🌐 **[Visit Crashed Out](https://crashedout.ai)** - Explore the full collection of AI mishaps
 
 ## What This Is
 
