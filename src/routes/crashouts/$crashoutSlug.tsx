@@ -2,21 +2,21 @@ import { createFileRoute, notFound } from '@tanstack/react-router'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
-import { Mishap } from '@/types'
+import { CrashOut } from '@/types'
 import { Link } from '@tanstack/react-router'
 import Footer from '@/components/Footer'
 
-export const Route = createFileRoute('/mishaps/$mishapSlug')({
+export const Route = createFileRoute('/crashouts/$crashoutSlug')({
   loader: async ({ params }) => {
-    const { mishapSlug } = params
-    const response = await fetch(`/api/mishaps/${mishapSlug}`)
+    const { crashoutSlug } = params
+    const response = await fetch(`/api/crashouts/${crashoutSlug}`)
 
     if (!response.ok && response.status === 404) {
       throw notFound()
     }
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch mishap: ${response.statusText}`)
+      throw new Error(`Failed to fetch crash out: ${response.statusText}`)
     }
 
     const data = await response.json()
@@ -26,7 +26,7 @@ export const Route = createFileRoute('/mishaps/$mishapSlug')({
 })
 
 function RouteComponent() {
-  const mishap: Mishap = Route.useLoaderData()
+  const crashout: CrashOut = Route.useLoaderData()
 
   const getSeverityColor = (severity: string) => {
     switch (severity) {
@@ -47,7 +47,7 @@ function RouteComponent() {
       <header
         className="border-b-4 border-border px-6 py-6 relative"
         style={{
-          backgroundImage: 'url(/background-2.png)',
+          backgroundImage: 'url(https://assets.crashedout.ai/background-2.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -66,18 +66,18 @@ function RouteComponent() {
           <div className="flex items-start gap-4">
             <div className="flex-1">
               <h1 className="font-heading text-4xl font-bold text-white mb-4 text-balance">
-                {mishap.title}
+                {crashout.title}
               </h1>
               <div className="flex items-center gap-4 mb-4">
-                <Badge className={getSeverityColor(mishap.severity)}>
-                  {mishap.severity}
+                <Badge className={getSeverityColor(crashout.severity)}>
+                  {crashout.severity}
                 </Badge>
                 <span className="text-sm text-white font-mono">
-                  {mishap.category} • {mishap.date}
+                  {crashout.category} • {crashout.date}
                 </span>
               </div>
               <p className="text-lg font-semibold text-white">
-                {mishap.company}
+                {crashout.company}
               </p>
             </div>
           </div>
@@ -93,7 +93,7 @@ function RouteComponent() {
               Overview
             </h2>
             <p className="text-lg leading-relaxed text-gray-800">
-              {mishap.fullDescription}
+              {crashout.fullDescription}
             </p>
           </section>
 
@@ -103,14 +103,14 @@ function RouteComponent() {
               What Went Wrong
             </h2>
             <p className="text-lg leading-relaxed text-gray-800 mb-6">
-              {mishap.whatWentWrong}
+              {crashout.whatWentWrong}
             </p>
 
-            {mishap.lessons && (
+            {crashout.lessons && (
               <div>
                 <h3 className="font-bold text-lg mb-3">Key Lessons</h3>
                 <ul className="space-y-2">
-                  {mishap.lessons.map((lesson, index) => (
+                  {crashout.lessons.map((lesson, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></span>
                       <span className="text-gray-800">{lesson}</span>
@@ -127,25 +127,25 @@ function RouteComponent() {
               How It Was Fixed
             </h2>
             <p className="text-lg leading-relaxed text-gray-800 mb-6">
-              {mishap.howFixed}
+              {crashout.howFixed}
             </p>
 
-            {mishap.impact && (
+            {crashout.impact && (
               <div className="bg-gray-50 border-2 border-gray-300 p-4">
                 <h3 className="font-bold text-lg mb-2">Long-term Impact</h3>
-                <p className="text-gray-800">{mishap.impact}</p>
+                <p className="text-gray-800">{crashout.impact}</p>
               </div>
             )}
           </section>
 
           {/* Timeline */}
-          {mishap.timeline && (
+          {crashout.timeline && (
             <section className="border-4 border-black bg-white p-8">
               <h2 className="font-heading text-2xl font-bold mb-6 border-b-2 border-black pb-2">
                 Timeline
               </h2>
               <div className="space-y-4">
-                {mishap.timeline.map((item, index) => (
+                {crashout.timeline.map((item, index) => (
                   <div key={index} className="flex gap-4 items-start">
                     <div className="w-24 flex-shrink-0 font-mono text-sm font-bold text-gray-600">
                       {item.date}
@@ -164,7 +164,7 @@ function RouteComponent() {
               News Sources & References
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
-              {mishap.sources.map((source, index) => (
+              {crashout.sources.map((source, index) => (
                 <a
                   key={index}
                   href={source.url}

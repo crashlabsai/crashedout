@@ -16,7 +16,7 @@ export const Route = createRootRoute({
       },
       {
         title:
-          'AI Mishaps - Discover when and how AI Agents and implementations have gone wrong',
+          'AI Crashouts - Discover when and how AI Agents and implementations have gone wrong',
       },
     ],
     links: [

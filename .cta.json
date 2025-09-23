@@ -1,5 +1,5 @@
 {
-  "projectName": "ai-mishaps",
+  "projectName": "crashedout",
   "mode": "file-router",
   "typescript": true,
   "tailwind": true,
@@ -7,11 +7,5 @@
   "git": true,
   "version": 1,
   "framework": "react-cra",
-  "chosenAddOns": [
-    "eslint",
-    "sentry",
-    "shadcn",
-    "table",
-    "start"
-  ]
+  "chosenAddOns": ["eslint", "sentry", "shadcn", "table", "start"]
 }

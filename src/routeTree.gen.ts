@@ -12,9 +12,9 @@ import { createServerRootRoute } from '@tanstack/react-start/server'
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as MishapsMishapSlugRouteImport } from './routes/mishaps/$mishapSlug'
-import { ServerRoute as ApiMishapsServerRouteImport } from './routes/api.mishaps'
-import { ServerRoute as ApiMishapsSlugServerRouteImport } from './routes/api.mishaps.$slug'
+import { Route as CrashoutsCrashoutSlugRouteImport } from './routes/crashouts/$crashoutSlug'
+import { ServerRoute as ApiCrashoutsServerRouteImport } from './routes/api.crashouts'
+import { ServerRoute as ApiCrashoutsSlugServerRouteImport } from './routes/api.crashouts.$slug'
 
 const rootServerRouteImport = createServerRootRoute()
 
@@ -23,70 +23,70 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MishapsMishapSlugRoute = MishapsMishapSlugRouteImport.update({
-  id: '/mishaps/$mishapSlug',
-  path: '/mishaps/$mishapSlug',
+const CrashoutsCrashoutSlugRoute = CrashoutsCrashoutSlugRouteImport.update({
+  id: '/crashouts/$crashoutSlug',
+  path: '/crashouts/$crashoutSlug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiMishapsServerRoute = ApiMishapsServerRouteImport.update({
-  id: '/api/mishaps',
-  path: '/api/mishaps',
+const ApiCrashoutsServerRoute = ApiCrashoutsServerRouteImport.update({
+  id: '/api/crashouts',
+  path: '/api/crashouts',
   getParentRoute: () => rootServerRouteImport,
 } as any)
-const ApiMishapsSlugServerRoute = ApiMishapsSlugServerRouteImport.update({
+const ApiCrashoutsSlugServerRoute = ApiCrashoutsSlugServerRouteImport.update({
   id: '/$slug',
   path: '/$slug',
-  getParentRoute: () => ApiMishapsServerRoute,
+  getParentRoute: () => ApiCrashoutsServerRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/mishaps/$mishapSlug': typeof MishapsMishapSlugRoute
+  '/crashouts/$crashoutSlug': typeof CrashoutsCrashoutSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/mishaps/$mishapSlug': typeof MishapsMishapSlugRoute
+  '/crashouts/$crashoutSlug': typeof CrashoutsCrashoutSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/mishaps/$mishapSlug': typeof MishapsMishapSlugRoute
+  '/crashouts/$crashoutSlug': typeof CrashoutsCrashoutSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/mishaps/$mishapSlug'
+  fullPaths: '/' | '/crashouts/$crashoutSlug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/mishaps/$mishapSlug'
-  id: '__root__' | '/' | '/mishaps/$mishapSlug'
+  to: '/' | '/crashouts/$crashoutSlug'
+  id: '__root__' | '/' | '/crashouts/$crashoutSlug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  MishapsMishapSlugRoute: typeof MishapsMishapSlugRoute
+  CrashoutsCrashoutSlugRoute: typeof CrashoutsCrashoutSlugRoute
 }
 export interface FileServerRoutesByFullPath {
-  '/api/mishaps': typeof ApiMishapsServerRouteWithChildren
-  '/api/mishaps/$slug': typeof ApiMishapsSlugServerRoute
+  '/api/crashouts': typeof ApiCrashoutsServerRouteWithChildren
+  '/api/crashouts/$slug': typeof ApiCrashoutsSlugServerRoute
 }
 export interface FileServerRoutesByTo {
-  '/api/mishaps': typeof ApiMishapsServerRouteWithChildren
-  '/api/mishaps/$slug': typeof ApiMishapsSlugServerRoute
+  '/api/crashouts': typeof ApiCrashoutsServerRouteWithChildren
+  '/api/crashouts/$slug': typeof ApiCrashoutsSlugServerRoute
 }
 export interface FileServerRoutesById {
   __root__: typeof rootServerRouteImport
-  '/api/mishaps': typeof ApiMishapsServerRouteWithChildren
-  '/api/mishaps/$slug': typeof ApiMishapsSlugServerRoute
+  '/api/crashouts': typeof ApiCrashoutsServerRouteWithChildren
+  '/api/crashouts/$slug': typeof ApiCrashoutsSlugServerRoute
 }
 export interface FileServerRouteTypes {
   fileServerRoutesByFullPath: FileServerRoutesByFullPath
-  fullPaths: '/api/mishaps' | '/api/mishaps/$slug'
+  fullPaths: '/api/crashouts' | '/api/crashouts/$slug'
   fileServerRoutesByTo: FileServerRoutesByTo
-  to: '/api/mishaps' | '/api/mishaps/$slug'
-  id: '__root__' | '/api/mishaps' | '/api/mishaps/$slug'
+  to: '/api/crashouts' | '/api/crashouts/$slug'
+  id: '__root__' | '/api/crashouts' | '/api/crashouts/$slug'
   fileServerRoutesById: FileServerRoutesById
 }
 export interface RootServerRouteChildren {
-  ApiMishapsServerRoute: typeof ApiMishapsServerRouteWithChildren
+  ApiCrashoutsServerRoute: typeof ApiCrashoutsServerRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -98,54 +98,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/mishaps/$mishapSlug': {
-      id: '/mishaps/$mishapSlug'
-      path: '/mishaps/$mishapSlug'
-      fullPath: '/mishaps/$mishapSlug'
-      preLoaderRoute: typeof MishapsMishapSlugRouteImport
+    '/crashouts/$crashoutSlug': {
+      id: '/crashouts/$crashoutSlug'
+      path: '/crashouts/$crashoutSlug'
+      fullPath: '/crashouts/$crashoutSlug'
+      preLoaderRoute: typeof CrashoutsCrashoutSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
 }
 declare module '@tanstack/react-start/server' {
   interface ServerFileRoutesByPath {
-    '/api/mishaps': {
-      id: '/api/mishaps'
-      path: '/api/mishaps'
-      fullPath: '/api/mishaps'
-      preLoaderRoute: typeof ApiMishapsServerRouteImport
+    '/api/crashouts': {
+      id: '/api/crashouts'
+      path: '/api/crashouts'
+      fullPath: '/api/crashouts'
+      preLoaderRoute: typeof ApiCrashoutsServerRouteImport
       parentRoute: typeof rootServerRouteImport
     }
-    '/api/mishaps/$slug': {
-      id: '/api/mishaps/$slug'
+    '/api/crashouts/$slug': {
+      id: '/api/crashouts/$slug'
       path: '/$slug'
-      fullPath: '/api/mishaps/$slug'
-      preLoaderRoute: typeof ApiMishapsSlugServerRouteImport
-      parentRoute: typeof ApiMishapsServerRoute
+      fullPath: '/api/crashouts/$slug'
+      preLoaderRoute: typeof ApiCrashoutsSlugServerRouteImport
+      parentRoute: typeof ApiCrashoutsServerRoute
     }
   }
 }
 
-interface ApiMishapsServerRouteChildren {
-  ApiMishapsSlugServerRoute: typeof ApiMishapsSlugServerRoute
+interface ApiCrashoutsServerRouteChildren {
+  ApiCrashoutsSlugServerRoute: typeof ApiCrashoutsSlugServerRoute
 }
 
-const ApiMishapsServerRouteChildren: ApiMishapsServerRouteChildren = {
-  ApiMishapsSlugServerRoute: ApiMishapsSlugServerRoute,
+const ApiCrashoutsServerRouteChildren: ApiCrashoutsServerRouteChildren = {
+  ApiCrashoutsSlugServerRoute: ApiCrashoutsSlugServerRoute,
 }
 
-const ApiMishapsServerRouteWithChildren =
-  ApiMishapsServerRoute._addFileChildren(ApiMishapsServerRouteChildren)
+const ApiCrashoutsServerRouteWithChildren =
+  ApiCrashoutsServerRoute._addFileChildren(ApiCrashoutsServerRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  MishapsMishapSlugRoute: MishapsMishapSlugRoute,
+  CrashoutsCrashoutSlugRoute: CrashoutsCrashoutSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 const rootServerRouteChildren: RootServerRouteChildren = {
-  ApiMishapsServerRoute: ApiMishapsServerRouteWithChildren,
+  ApiCrashoutsServerRoute: ApiCrashoutsServerRouteWithChildren,
 }
 export const serverRouteTree = rootServerRouteImport
   ._addFileChildren(rootServerRouteChildren)

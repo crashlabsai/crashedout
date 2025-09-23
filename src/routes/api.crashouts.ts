@@ -1,11 +1,11 @@
 import { createServerFileRoute } from '@tanstack/react-start/server'
-import { loadMishapsData } from '@/lib/mishaps-data'
+import { loadCrashoutsData } from '@/lib/crashouts-data'
 
-export const ServerRoute = createServerFileRoute('/api/mishaps').methods({
+export const ServerRoute = createServerFileRoute('/api/crashouts').methods({
   GET: () => {
-    const { mishaps } = loadMishapsData()
+    const { crashouts } = loadCrashoutsData()
 
-    return new Response(JSON.stringify(mishaps), {
+    return new Response(JSON.stringify(crashouts), {
       status: 200,
       headers: {
         'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/dialog'
 import { useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
-import { Mishap } from '@/types'
+import { CrashOut } from '@/types'
 
 const getSeverityColor = (severity: string) => {
   switch (severity) {
@@ -31,52 +31,58 @@ const getSeverityColor = (severity: string) => {
   }
 }
 
-export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
-  const [selectedMishap, setSelectedMishap] = useState<Mishap | null>(null)
+export default function CrashOutsGrid({
+  crashouts,
+}: {
+  crashouts: CrashOut[]
+}) {
+  const [selectedCrashout, setSelectedCrashout] = useState<CrashOut | null>(
+    null,
+  )
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const navigate = useNavigate()
 
   return (
-    <section className="px-6 py-16" data-section="mishaps-grid">
+    <section className="px-6 py-16" data-section="crashouts-grid">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <h2 className="font-heading text-4xl font-bold text-foreground md:text-5xl">
             When AI Goes Wrong
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            {'Real mishaps, real lessons.'}
+            {'Real AI crash outs, real lessons.'}
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {mishaps.map((mishap) => (
+          {crashouts.map((crashout) => (
             <Card
-              key={mishap.id}
+              key={crashout.id}
               className="group relative border-4 border-black bg-white transition-all duration-200 hover:shadow-[6px_6px_0px_0px_black] hover:-translate-y-1 hover:translate-x-1 cursor-pointer"
               onClick={() => {
-                setSelectedMishap(mishap)
+                setSelectedCrashout(crashout)
                 setIsDialogOpen(true)
               }}
             >
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between gap-4">
-                  <Badge className={getSeverityColor(mishap.severity)}>
-                    {mishap.severity}
+                  <Badge className={getSeverityColor(crashout.severity)}>
+                    {crashout.severity}
                   </Badge>
                 </div>
 
                 <CardTitle className="font-heading text-xl font-bold leading-tight text-balance mt-4">
-                  {mishap.title}
+                  {crashout.title}
                 </CardTitle>
 
                 <div className="text-xs text-gray-600 font-mono">
-                  {mishap.category} • {mishap.date}
+                  {crashout.category} • {crashout.date}
                 </div>
               </CardHeader>
 
               <CardContent>
                 <CardDescription className="text-pretty leading-relaxed text-black">
-                  {mishap.description}
+                  {crashout.description}
                 </CardDescription>
               </CardContent>
             </Card>
@@ -84,38 +90,37 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
         </div>
       </div>
 
-      {/* Mishap Details Dialog */}
       <Dialog
         open={isDialogOpen}
         onOpenChange={(open) => {
           setIsDialogOpen(open)
           if (!open) {
-            // Clear the selected mishap after dialog closes
-            setTimeout(() => setSelectedMishap(null), 150)
+            // Clear the selected crashout after dialog closes
+            setTimeout(() => setSelectedCrashout(null), 150)
           }
         }}
       >
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto border-4 border-black bg-white">
-          {selectedMishap && (
+          {selectedCrashout && (
             <>
               <DialogHeader>
                 <div className="flex items-start gap-4 mb-4">
                   <div className="flex-1">
                     <DialogTitle className="font-heading text-2xl font-bold text-left mb-2">
-                      {selectedMishap.title}
+                      {selectedCrashout.title}
                     </DialogTitle>
                     <div className="flex items-center gap-2 mb-2">
                       <Badge
-                        className={getSeverityColor(selectedMishap.severity)}
+                        className={getSeverityColor(selectedCrashout.severity)}
                       >
-                        {selectedMishap.severity}
+                        {selectedCrashout.severity}
                       </Badge>
                       <span className="text-sm text-gray-600 font-mono">
-                        {selectedMishap.category} • {selectedMishap.date}
+                        {selectedCrashout.category} • {selectedCrashout.date}
                       </span>
                     </div>
                     <p className="text-sm font-semibold text-gray-800">
-                      {selectedMishap.company}
+                      {selectedCrashout.company}
                     </p>
                   </div>
                 </div>
@@ -127,7 +132,7 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
                     Description
                   </h3>
                   <p className="text-gray-800 leading-relaxed">
-                    {selectedMishap.fullDescription}
+                    {selectedCrashout.fullDescription}
                   </p>
                 </div>
 
@@ -136,7 +141,7 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
                     What Went Wrong
                   </h3>
                   <p className="text-gray-800 leading-relaxed">
-                    {selectedMishap.whatWentWrong}
+                    {selectedCrashout.whatWentWrong}
                   </p>
                 </div>
 
@@ -145,7 +150,7 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
                     How It Was Fixed
                   </h3>
                   <p className="text-gray-800 leading-relaxed">
-                    {selectedMishap.howFixed}
+                    {selectedCrashout.howFixed}
                   </p>
                 </div>
 
@@ -154,7 +159,7 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
                     News Sources
                   </h3>
                   <div className="grid gap-4 md:grid-cols-2">
-                    {selectedMishap.sources.map((source, index) => (
+                    {selectedCrashout.sources.map((source, index) => (
                       <a
                         key={index}
                         href={source.url}
@@ -188,8 +193,8 @@ export default function MishapsGrid({ mishaps }: { mishaps: Mishap[] }) {
                     variant="inverse"
                     className="w-full"
                     onClick={() => {
-                      if (selectedMishap) {
-                        navigate({ to: `/mishaps/${selectedMishap.slug}` })
+                      if (selectedCrashout) {
+                        navigate({ to: `/crashouts/${selectedCrashout.slug}` })
                       }
                     }}
                   >

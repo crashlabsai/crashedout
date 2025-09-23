@@ -1,4 +1,4 @@
-export type Mishap = {
+export type CrashOut = {
   id: string
   slug: string
   title: string

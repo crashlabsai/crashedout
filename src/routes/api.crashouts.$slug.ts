@@ -1,15 +1,17 @@
 import { createServerFileRoute } from '@tanstack/react-start/server'
-import { loadMishapsData } from '@/lib/mishaps-data'
+import { loadCrashoutsData } from '@/lib/crashouts-data'
 
-export const ServerRoute = createServerFileRoute('/api/mishaps/$slug').methods({
+export const ServerRoute = createServerFileRoute(
+  '/api/crashouts/$slug',
+).methods({
   GET: ({ params }) => {
     const slug = params.slug
-    const mishapMap = loadMishapsData().mishapMap
+    const crashoutsMap = loadCrashoutsData().crashoutsMap
 
-    const mishap = mishapMap.get(slug)
+    const crashout = crashoutsMap.get(slug)
 
-    if (!mishap) {
-      return new Response(JSON.stringify({ error: 'Mishap not found' }), {
+    if (!crashout) {
+      return new Response(JSON.stringify({ error: 'Crashout not found' }), {
         status: 404,
         headers: {
           'Content-Type': 'application/json',
@@ -17,7 +19,7 @@ export const ServerRoute = createServerFileRoute('/api/mishaps/$slug').methods({
       })
     }
 
-    return new Response(JSON.stringify(mishap), {
+    return new Response(JSON.stringify(crashout), {
       status: 200,
       headers: {
         'Content-Type': 'application/json',

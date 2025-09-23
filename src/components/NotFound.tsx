@@ -5,11 +5,10 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="text-center max-w-md">
-        {/* AI MISHAPS Logo */}
         <div className="mb-8">
           <img
-            src="/logo.png"
-            alt="AI Mishaps Logo"
+            src="https://assets.crashedout.ai/logo.png"
+            alt="Crashed Out Logo"
             className="w-48 h-48 mx-auto"
           />
         </div>
@@ -22,7 +21,7 @@ export default function NotFound() {
             PAGE NOT FOUND
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            This page seems to have experienced its own mishap.
+            This page seems to have experienced its own crash out.
           </p>
         </div>
 
@@ -31,9 +30,9 @@ export default function NotFound() {
             <Button className="w-full">BACK</Button>
           </Link>
 
-          <a href="https://github.com/crashlabsai/ai-mishaps" className="block">
+          <a href="https://github.com/crashlabsai/crashedout" className="block">
             <Button variant="inverse" className="w-full">
-              REPORT THIS MISHAP
+              REPORT THIS CRASH OUT
             </Button>
           </a>
         </div>
