@@ -6,6 +6,8 @@ A curated collection of real-world AI failures, mishaps, and cautionary tales. T
 
 🌐 **[Visit Crashed Out](https://crashedout.ai)** - Explore the full collection of AI mishaps
 
+
+![Crashed Out Comic](https://assets.crashedout.ai/crashout-comic.jpg "comic")
 ## What This Is
 
 Crashed Out is a web app that showcases documented cases where AI systems have failed in production environments. Each "crashout" includes:
