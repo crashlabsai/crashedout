@@ -56,6 +56,11 @@ const config = defineConfig({
           },
         })),
       ],
+      sitemap: {
+        enabled: true,
+        outputPath: '/sitemap.xml',
+        host: 'https://crashedout.ai',
+      },
     }),
     viteReact(),
   ],
