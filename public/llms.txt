@@ -1,8 +1,13 @@
-# Crashed Out
+# llms.txt for Crashed Out
 
-> A comprehensive database of AI failures, mishaps, and lessons learned from real-world AI deployments. We document what went wrong, how companies fixed it, and what others can learn from these incidents.
+*A project by [CrashLabs](https://crashlabs.ai)*
+
+> A curated collection of real-world AI failures, mishaps, and cautionary tales. This project documents when AI systems go wrong, from chatbots giving bad legal advice to voice assistants accepting impossible orders. Each crashout includes what went wrong, how it was fixed, the impact on users and companies, and source links for verification.
 
 Key terms: AI failures, machine learning mishaps, chatbot errors, AI hallucinations, automation failures, AI safety, AI ethics, AI debugging.
+
+## About
+This is an open source project that showcases documented cases where AI systems have failed in production environments. We welcome contributions to expand this collection of AI mishaps.
 
 ## Crashouts
 - [Taco Bell Voice AI Overwhelmed by 18,000 Water Cup Order](https://crashedout.ai/crashouts/taco-bell-ai-drive-thru-fail): Taco Bell's voice-ordering AI went viral after a TikTok video showed it accepting an order for 18,000 water cups and misinterpreting a Mountain Dew order, prompting the chain to rethink its AI drive-thru strategy. (Taco Bell, Medium severity)
@@ -14,6 +19,11 @@ Key terms: AI failures, machine learning mishaps, chatbot errors, AI hallucinati
 - [New York City’s MyCity Chatbot Gives Illegal Advice](https://crashedout.ai/crashouts/nyc-mycity-chatbot-bad-legal-advice): NYC’s official business chatbot told users that landlords aren’t required to accept Section 8 housing vouchers and gave other incorrect guidance on worker rights and rent rules. (City of New York, High severity)
 - [Google Bard Gives Wrong Answer in Promotional Ad](https://crashedout.ai/crashouts/google-bard-promotional-error): In its first public demo, Google’s Bard chatbot incorrectly claimed the James Webb Space Telescope took the first pictures of a planet outside our solar system, causing Alphabet’s market value to drop by $100 billion. (Google, Medium severity)
 - [CNET Finds Errors and Plagiarism in AI-Generated Articles](https://crashedout.ai/crashouts/cnet-ai-article-errors): Technology site CNET discovered factual errors and plagiarized phrases in AI-generated finance articles, forcing corrections on 41 of 77 stories and a temporary pause in AI-written content. (CNET, Medium severity)
+
+## Contributing
+- [GitHub Repository](https://github.com/RyanJunejo/ai-mishaps): Source code and issue tracker
+- Submit new crashouts by creating issues or pull requests
+- Only include documented, verifiable incidents with reliable source links
 
 ## Optional
 - [Sitemap](https://crashedout.ai/sitemap.xml): Complete site structure

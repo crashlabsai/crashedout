@@ -15,11 +15,16 @@ function generateLlmsTxt(): void {
     )
 
     // Generate llms.txt content
-    const llmsTxtContent = `# CrashedOut.ai
+    const llmsTxtContent = `# llms.txt for Crashed Out
 
-> A comprehensive database of AI failures, mishaps, and lessons learned from real-world AI deployments. We document what went wrong, how companies fixed it, and what others can learn from these incidents.
+*A project by [CrashLabs](https://crashlabs.ai)*
+
+> A curated collection of real-world AI failures, mishaps, and cautionary tales. This project documents when AI systems go wrong, from chatbots giving bad legal advice to voice assistants accepting impossible orders. Each crashout includes what went wrong, how it was fixed, the impact on users and companies, and source links for verification.
 
 Key terms: AI failures, machine learning mishaps, chatbot errors, AI hallucinations, automation failures, AI safety, AI ethics, AI debugging.
+
+## About
+This is an open source project that showcases documented cases where AI systems have failed in production environments. We welcome contributions to expand this collection of AI mishaps.
 
 ## Crashouts
 ${crashouts
@@ -28,6 +33,11 @@ ${crashouts
       `- [${crashout.title}](https://crashedout.ai/crashouts/${crashout.slug}): ${crashout.description} (${crashout.company}, ${crashout.severity} severity)`,
   )
   .join('\n')}
+
+## Contributing
+- [GitHub Repository](https://github.com/RyanJunejo/ai-mishaps): Source code and issue tracker
+- Submit new crashouts by creating issues or pull requests
+- Only include documented, verifiable incidents with reliable source links
 
 ## Optional
 - [Sitemap](https://crashedout.ai/sitemap.xml): Complete site structure
