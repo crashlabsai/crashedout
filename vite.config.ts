@@ -4,6 +4,7 @@ import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import crashoutsData from './src/data/crashouts.json'
+import { generateLlmsTxt } from './scripts/generate-llms-txt'
 
 import { wrapVinxiConfigWithSentry } from '@sentry/tanstackstart-react'
 
@@ -14,6 +15,13 @@ const config = defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tailwindcss(),
+    // Custom plugin to generate llms.txt at build time
+    {
+      name: 'generate-llms-txt',
+      buildStart() {
+        generateLlmsTxt()
+      },
+    },
     tanstackStart({
       customViteReactPlugin: true,
       prerender: {
