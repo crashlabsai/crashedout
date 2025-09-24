@@ -1,6 +1,8 @@
+import React from 'react'
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 
 import Header from '../components/Header'
+import LoadingScreen from '@/components/LoadingScreen'
 
 import appCss from '../styles.css?url'
 
@@ -31,6 +33,13 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const [isLoading, setIsLoading] = React.useState(true)
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => setIsLoading(false), 1100)
+    return () => clearTimeout(timeout)
+  }, [])
+
   return (
     <html lang="en">
       <head>
@@ -43,6 +52,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body className="font-sans">
+        <LoadingScreen isVisible={isLoading} />
         <Header />
         {children}
         <Scripts />

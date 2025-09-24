@@ -33,9 +33,9 @@ function RouteComponent() {
       case 'Critical':
         return 'bg-white text-black border-2 border-black'
       case 'High':
-        return 'bg-white text-black border-2 border-black'
+        return 'bg-red-600 text-white border-2 border-red-600'
       case 'Medium':
-        return 'bg-white text-black border-2 border-black'
+        return 'bg-yellow-500 text-black border-2 border-yellow-500'
       default:
         return 'bg-gray-200 text-black border-2 border-gray-200'
     }
