@@ -3,6 +3,8 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
+import crashoutsData from './src/data/crashouts.json'
+import { generateLlmsTxt } from './scripts/generate-llms-txt'
 
 import { wrapVinxiConfigWithSentry } from '@sentry/tanstackstart-react'
 
@@ -13,8 +15,60 @@ const config = defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tailwindcss(),
+    // Custom plugin to generate llms.txt at build time
+    {
+      name: 'generate-llms-txt',
+      buildStart() {
+        generateLlmsTxt()
+      },
+    },
     tanstackStart({
       customViteReactPlugin: true,
+      prerender: {
+        // Enable prerendering
+        enabled: true,
+
+        // Enable if you need pages to be at `/page/index.html` instead of `/page.html`
+        autoSubfolderIndex: true,
+
+        // How many prerender jobs to run at once
+        concurrency: 14,
+
+        // Whether to extract links from the HTML and prerender them also
+        crawlLinks: true,
+
+        // Number of times to retry a failed prerender job
+        retryCount: 2,
+
+        // Delay between retries in milliseconds
+        retryDelay: 1000,
+
+        // Callback when page is successfully rendered
+        onSuccess: ({ page }) => {
+          console.log(`Rendered ${page.path}!`)
+        },
+      },
+      // Explicitly configure crashout pages for prerendering
+      pages: [
+        // Home page
+        {
+          path: '/',
+          prerender: { enabled: true, outputPath: '/index.html' },
+        },
+        // All crashout pages
+        ...crashoutsData.map((crashout) => ({
+          path: `/crashouts/${crashout.slug}`,
+          prerender: {
+            enabled: true,
+            outputPath: `/crashouts/${crashout.slug}/index.html`,
+          },
+        })),
+      ],
+      sitemap: {
+        enabled: true,
+        outputPath: '/sitemap.xml',
+        host: 'https://crashedout.ai',
+      },
     }),
     viteReact(),
   ],
