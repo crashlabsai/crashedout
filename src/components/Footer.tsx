@@ -28,7 +28,7 @@ export default function Footer() {
             <Button
               onClick={() =>
                 window.open(
-                  'https://github.com/crashlabsai/crashedout/issues/new',
+                  'https://github.com/crashlabsai/crashedout/issues/new?template=new-crash-out-template.md',
                   '_blank',
                 )
               }
