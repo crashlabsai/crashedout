@@ -55,38 +55,40 @@ export default function CrashOutsGrid({
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {crashouts.map((crashout) => (
-            <Card
-              key={crashout.id}
-              className="group relative border-4 border-black bg-white transition-all duration-200 hover:shadow-[6px_6px_0px_0px_black] hover:-translate-y-1 hover:translate-x-1 cursor-pointer"
-              onClick={() => {
-                setSelectedCrashout(crashout)
-                setIsDialogOpen(true)
-              }}
-            >
-              <CardHeader className="pb-4">
-                <div className="flex items-start justify-between gap-4">
-                  <Badge className={getSeverityColor(crashout.severity)}>
-                    {crashout.severity}
-                  </Badge>
-                </div>
+          {crashouts
+            .sort((a, b) => parseInt(b.date) - parseInt(a.date))
+            .map((crashout) => (
+              <Card
+                key={crashout.id}
+                className="group relative border-4 border-black bg-white transition-all duration-200 hover:shadow-[6px_6px_0px_0px_black] hover:-translate-y-1 hover:translate-x-1 cursor-pointer"
+                onClick={() => {
+                  setSelectedCrashout(crashout)
+                  setIsDialogOpen(true)
+                }}
+              >
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <Badge className={getSeverityColor(crashout.severity)}>
+                      {crashout.severity}
+                    </Badge>
+                  </div>
 
-                <CardTitle className="font-heading text-xl font-bold leading-tight text-balance mt-4">
-                  {crashout.title}
-                </CardTitle>
+                  <CardTitle className="font-heading text-xl font-bold leading-tight text-balance mt-4">
+                    {crashout.title}
+                  </CardTitle>
 
-                <div className="text-xs text-gray-600 font-mono">
-                  {crashout.category} • {crashout.date}
-                </div>
-              </CardHeader>
+                  <div className="text-xs text-gray-600 font-mono">
+                    {crashout.category} • {crashout.date}
+                  </div>
+                </CardHeader>
 
-              <CardContent>
-                <CardDescription className="text-pretty leading-relaxed text-black">
-                  {crashout.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+                <CardContent>
+                  <CardDescription className="text-pretty leading-relaxed text-black">
+                    {crashout.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
         </div>
       </div>
 
